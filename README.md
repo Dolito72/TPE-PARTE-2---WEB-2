@@ -146,7 +146,9 @@ Los resultados pueden devolverse filtados por columna si se agregan parámetros 
 
 En el ejemplo busca en todos los campos que tienen el id de especificacion 13:
 
+
 http://localhost/web/tpe2/api/products/?column=id_especificacion&filtervalue=13
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Errores
 A continuación se detallan errores específicos de la API y los mensajes de respuesta a los mismos.
