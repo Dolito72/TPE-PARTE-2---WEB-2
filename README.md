@@ -14,7 +14,7 @@ Esta Api esta basada en principios RESTful y usa los métodos HTTP (GET) para ac
 eliminar. El formato de transferencia soportado por el API para enviar y recibir respuestas es en JSON.
 
 
-  ### Request	      |     Método	   |             Endpoint	                    |       Status          
+  ### Request	      |     Método	   |             Endpoint	                      |       Status          
 
 
 ----------------------------------------------------------------------------------------------------        
@@ -153,7 +153,7 @@ http://localhost/web/tpe2/api/products/?column=id_especificacion&filtervalue=13
 ## Errores
 A continuación se detallan errores específicos de la API y los mensajes de respuesta a los mismos.
 
- ###  Status    |    Código error	       |                  Mensaje	  
+ ###  Status    |    Código error	       |                     Mensaje	  
 
      400       |    "Bad request"        |      "Ingresó de forma incorrecta el parámetro"                
 -----------------------------------------------------------------------------------------------------
