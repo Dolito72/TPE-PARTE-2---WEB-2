@@ -14,12 +14,23 @@ Esta Api esta basada en principios RESTful y usa los métodos HTTP (GET) para ac
 eliminar. El formato de transferencia soportado por el API para enviar y recibir respuestas es en JSON.
 
 
-## Request	           Método	                Endpoint	                        Status
-Obtener productos	      GET	        http://localhost/web/tpe2/api/products/	      200
-Obtener producto	      GET	        http://localhost/web/tpe2/api/products/:ID	  200
-Crear producto	       POST	    http://localhost/web/tpe2/api/products/	          201
-Actualizar producto	    PUT	        http://localhost/web/tpe2/api/products/:ID	  200
-Eliminar producto	    DELETE	    http://localhost/web/tpe2/api/products/:ID	    200
+  ## Request	       Método	                Endpoint	                  Status          
+| ----------------- |---------| --------------------------------------------| -------|
+| Obtener productos |    GET  | http://localhost/web/tpe2/api/products/     |   200  |
+| -----------------------------------------------------------------------------------|
+|                   |         |                                             |        |
+| Obtener producto  |    GET  | http://localhost/web/tpe2/api/products/:ID  |   200  |
+| -----------------------------------------------------------------------------------|
+|                   |         |                                             |        |
+| Crear producto    |   POST  | http://localhost/web/tpe2/api/products/     |   201  |
+|-------------------|---------|---------------------------------------------|--------|
+|                   |         |                                             |        |
+|Actualizar producto|   PUT   | http://localhost/web/tpe2/api/products/:ID  |   200  |
+|------------------------------------------------------------------------------------|
+|                   |         |                                             |        |
+| Eliminar producto |  DELETE | http://localhost/web/tpe2/api/products/:ID  |   200  |
+| -----------------------------------------------------------------------------------|
+
 
 ## Endpoints
 Los endpoints en nuestra API permitirán acceder a los recursos para poder consultar, paginar, ordenar y filtrar datos de todos los productos registrados en la base
