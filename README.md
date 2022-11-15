@@ -62,6 +62,7 @@ Recurso del endpoint products/ que retorna un producto.
 http://localhost/web/tpe2/api/products/
 Esta petición permite crear un nuevo producto y guardarlo en la base de datos.
 Para enviarlo, usamos la salida en formato JSON, escribiéndolo en el body de la solicitud.
+````
 Ejemplo:
 BODY
    {
@@ -70,6 +71,7 @@ BODY
         "stock": 4,
         "id_especificacion": 3
     }
+````
 
 ## PUT Actualizar un producto
 http://localhost/web/tpe2/api/products/:ID
