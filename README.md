@@ -127,19 +127,18 @@ http://localhost/web/tpe2/api/products/?column=id_especificacion&filtervalue=13
 ## Errores
 A continuación se detallan errores específicos de la API y los mensajes de respuesta a los mismos.
 
- ##  Status       Código error	                         Mensaje	  
-                        
-| ----------- |------------------------|--------------------------------------------------------------|
-|    400      |  "Bad request"         |   "Ingresó de forma incorrecta el parámetro"                 |
-| ----------------------------------------------------------------------------------------------------|
-|             |                        |                                                              |
-|    404      |  "Not found"           |             "No hay productos"                               |
-|-----------------------------------------------------------------------------------------------------|                
-|    500      |"Internal server error" |"Se encontró algo inesperado que impide completar la petición"|
-|-----------------------------------------------------------------------------------------------------|
+##  Status       Código error	                         Mensaje	  
+
+     400         "Bad request"                 "Ingresó de forma incorrecta el parámetro"                
+-----------------------------------------------------------------------------------------------------
+                                                                   
+     404          "Not found"                         "No hay productos"                             
+---------------------------------------------------------------------------------------------------------  
+ 
+     500      "Internal Server Error"     "Se encontró algo inesperado que impide completar la petición"
 
 
-
+-----------------------------------------------------------------------------------------------------------
 
 En el ejemplo se ingresa mal el parámetro para ordenar:
 
