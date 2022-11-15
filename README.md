@@ -80,6 +80,7 @@ Luego, en formato JSON, escribimos los datos en el body.
 En el ejemplo a continuación, modificamos el precio del producto anterior que tiene el id 4.
 http://localhost/web/tpe2/api/products/4
 
+```
 BODY
    {
         "precio": 1200,
@@ -87,6 +88,7 @@ BODY
         "stock": 4,
         "id_especificacion": 3
     }
+````
 
 ## DELETE Eliminar un producto
 http://localhost/web/tpe2/api/products/:ID
@@ -94,6 +96,8 @@ Esta petición elimina un producto. Para ello vamos a necesitar el id del mismo.
 En formato JSON, escribimos los datos en el body.
 En el ejemplo a continuación, eliminamos el producto con el id 4.
 http://localhost/web/tpe2/api/products/:4
+
+````
 BODY
    {
         "precio": 1200,
@@ -101,6 +105,7 @@ BODY
         "stock": 4,
         "id_especificacion": 3
     }
+````
 
 ## Parámetros por defecto
 En el caso de que se omitan algunos parámetros de consulta, las solicitudes GET devolverán los valores por defecto establecidos.
