@@ -79,40 +79,42 @@ class ProductApiController
             $okParameters++;
         }
 
-        if (count($_GET) > $okParameters) {
-            $this->view->response("Uno o más parámetros son incorrectos", 400);
-            die;
-        }
+      
 
         if ($column != null && !in_array(strtolower($column), $columns)) {
             $this->view->response("Ingresó de forma incorrecta el nombre de la columna", 400);
             die;
         }
-
-        if ($column != null && $filtervalue == null) {
+      
+        if ($column != null && $filtervalue == null || is_numeric($filtervalue)) {
             $this->view->response("Ingresó de forma incorrecta el valor de la columna", 400);
             die;
         }
-
-
-        if (empty($orderBy) || isset($orderBy) && !in_array(strtolower($orderBy), $columns)) {
+        
+        if ($orderBy != null && !in_array(strtolower($orderBy), $columns)) {
             $this->view->response("Ingresó de forma incorrecta el parámetro para ordenar", 400);
             die;
         }
-        if (empty($order) || isset($order)  &&  !in_array(strtolower($order), $orders)) {
+
+        if ($order != null &&  !in_array(strtolower($order), $orders)) {
             return $this->view->response("Ingresó de forma incorrecta el parámetro orden", 400);
             die;
         }
 
-        if (empty($page) || $page != null && (!is_numeric($page) || $page <= 0)) {
+        if ($page != null && (!is_numeric($page) || $page <= 0)) {
             $this->view->response("Ingresó de forma incorrecta la página", 400);
             die;
         }
 
-        if (empty($limit) || $limit != null && (!is_numeric($limit) || $limit <= 0)) {
+        if ($limit != null && (!is_numeric($limit) || $limit <= 0)) {
             $this->view->response("Ingresó de forma incorrecta el límite", 400);
             die;
         }
+        if (count($_GET) > $okParameters){
+            $this->view->response("Uno o más parámetros son incorrectos", 400);
+            die;
+        }
+
     }
 
     public function getProduct($params = null)
