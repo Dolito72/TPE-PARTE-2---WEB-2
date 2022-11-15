@@ -1,20 +1,20 @@
-# TPE-PARTE-2---WEB-2
-# API REST MOTOS ROYAL ENFIELD
+## TPE-PARTE-2 WEB-2
+## API REST MOTOS ROYAL ENFIELD
 
-## Introducción
+### Introducción
 Proyecto Trabajo Practico Especial - Parte 2,  creado para la materia Web 2 de la carrera Tecnicatura Universitaria en Desarrollo de Aplicaciones Informáticas (TUDAI)
 de  la Universidad Nacional del Centro de la Pcia. de Bs. As. (UNICEN).  
 El servicio lista productos (motos marca Royal Enfield) y permite consultar y buscar por filtros , paginar y ordenar por varios criterios.
 
-## Autenticacion
+### Autenticacion
 Aun no cuenta con autenticación.
 
-## API Métodos
+### API Métodos
 Esta Api esta basada en principios RESTful y usa los métodos HTTP (GET) para acceder a los recursos, (POST y PUT) para agregar o modificar datos y (DELETE) para
 eliminar. El formato de transferencia soportado por el API para enviar y recibir respuestas es en JSON.
 
 
-  ## Request	      |     Método	   |             Endpoint	                    |       Status          
+  ### Request	      |     Método	   |             Endpoint	                    |       Status          
 
 
 ----------------------------------------------------------------------------------------------------        
@@ -31,7 +31,7 @@ eliminar. El formato de transferencia soportado por el API para enviar y recibir
 
  --------------------------------------------------------------------------------------------------
 
- Actualizar producto  |  PUT         |    http://localhost/web/tpe2/api/products/:ID   |  200
+ Actualizar producto  |  PUT         |    http://localhost/web/tpe2/api/products/:ID   |      200
 
 --------------------------------------------------------------------------------------------------
  
@@ -41,7 +41,7 @@ eliminar. El formato de transferencia soportado por el API para enviar y recibir
 
 _____________________________________________________________________________________________________________________________________________________
 
-## Endpoints
+### Endpoints
 Los endpoints en nuestra API permitirán acceder a los recursos para poder consultar, paginar, ordenar y filtrar datos de todos los productos registrados en la base
 de datos db_motos de nuestra aplicación.
 
@@ -49,21 +49,21 @@ http://localhost/web/tpe2/api/products/
 
 http://localhost/web/tpe2/api/products/:ID
 
-# Recursos
+## Recursos
 
-## GET Lista de productos
+### GET Lista de productos
 
 http://localhost/web/tpe2/api/products/
 
 Recurso del endpoint products/ que retorna una lista de productos. 
 
-## GET Producto
+### GET Producto
 
 http://localhost/web/tpe2/api/products/:ID
 
 Recurso del endpoint products/ que retorna un producto.
 
-## POST Crear un producto
+### POST Crear un producto
 
 http://localhost/web/tpe2/api/products/
 
@@ -81,7 +81,7 @@ BODY
     }
 ````
 
-## PUT Actualizar un producto
+### PUT Actualizar un producto
 
 http://localhost/web/tpe2/api/products/:ID
 
@@ -101,7 +101,7 @@ BODY
     }
 ````
 
-## DELETE Eliminar un producto
+### DELETE Eliminar un producto
 
 http://localhost/web/tpe2/api/products/:ID
 
@@ -121,7 +121,7 @@ BODY
     }
 ````
 
-## Parámetros por defecto
+### Parámetros por defecto
 
 En el caso de que se omitan algunos parámetros de consulta, las solicitudes GET devolverán los valores por defecto establecidos.
 Los mismos son página 1, límite 25, ordenados por id_especificación de forma ascendente.
@@ -134,14 +134,14 @@ http://localhost/web/tpe2/api/products/?page=1&limit=5
 
 Nota: si omite el parámetro de pedido, la página predeterminada será 1 y el limite 25.
 
-## Orden
+### Orden
 Los resultados pueden estar ordenados si se agregan a la consulta los parámetros orderBy (columna por la que se ordena) y order(asc o desc) a las solicitudes GET:
 
 http://localhost/web/tpe2/api/products/?sortBy=id_especificacion&order=desc
 
 Nota: si omite el parámetro de pedido, el orden predeterminado será por la columna id_especificacion y asc.
 
-## Filtrado
+### Filtrado
 Los resultados pueden devolverse filtados por columna si se agregan parámetros de consulta column (campo por filtrar) y filtervalue(valor de la columna) a la solicitud GET.
 
 En el ejemplo busca en todos los campos que tienen el id de especificacion 13:
@@ -153,7 +153,7 @@ http://localhost/web/tpe2/api/products/?column=id_especificacion&filtervalue=13
 ## Errores
 A continuación se detallan errores específicos de la API y los mensajes de respuesta a los mismos.
 
- ##  Status    |    Código error	       |                  Mensaje	  
+ ###  Status    |    Código error	       |                  Mensaje	  
 
      400       |    "Bad request"        |      "Ingresó de forma incorrecta el parámetro"                
 -----------------------------------------------------------------------------------------------------
