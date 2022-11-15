@@ -66,7 +66,23 @@ BODY
 http://localhost/web/tpe2/api/products/:ID
 Esta petición actualiza un producto que ya existe. Para ello vamos a necesitar el id del mismo.
 Luego, en formato JSON, escribimos los datos en el body.
-En el ejemplo a continuación, modificamos el precio del producto anterior.
+En el ejemplo a continuación, modificamos el precio del producto anterior que tiene el id 4.
+http://localhost/web/tpe2/api/products/4
+
+BODY
+   {
+        "precio": 1200,
+        "color": "Stellar red",
+        "stock": 4,
+        "id_especificacion": 3
+    }
+
+## DELETE Eliminar un producto
+http://localhost/web/tpe2/api/products/:ID
+Esta petición elimina un producto. Para ello vamos a necesitar el id del mismo.
+En formato JSON, escribimos los datos en el body.
+En el ejemplo a continuación, eliminamos el producto con el id 4.
+http://localhost/web/tpe2/api/products/:4
 BODY
    {
         "precio": 1200,
@@ -102,10 +118,19 @@ http://localhost/web/tpe2/api/products/?column=id_especificacion&filtervalue=13
 ## Errores
 A continuación se detallan errores específicos de la API y los mensajes de respuesta a los mismos.
 
-Status	    Código de error	                        Mensaje
-400     	“Bad request”	          "Ingresó de forma incorrecta el parámetro"
-404	        “Not found”                     	"No hay productos"
-500 	“Internal server error”	    "Se encontró algo inesperado que impide completar la petición"
+ ##  Status       Código error	                         Mensaje	  
+                        
+| ----------- |------------------------|--------------------------------------------------------------|
+|    400      |  "Bad request"         |   "Ingresó de forma incorrecta el parámetro"                 |
+| ----------------------------------------------------------------------------------------------------|
+|             |                        |                                                              |
+|    404      |  "Not found"           |             "No hay productos"                               |
+|-----------------------------------------------------------------------------------------------------|                
+|    500      |"Internal server error" |"Se encontró algo inesperado que impide completar la petición"|
+|-----------------------------------------------------------------------------------------------------|
+
+
+
 
 En el ejemplo se ingresa mal el parámetro para ordenar:
 
