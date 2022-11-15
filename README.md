@@ -15,22 +15,31 @@ eliminar. El formato de transferencia soportado por el API para enviar y recibir
 
 
   ## Request	       Método	                Endpoint	                  Status          
-| ----------------- |---------| --------------------------------------------| -------|
-| Obtener productos |    GET  | http://localhost/web/tpe2/api/products/     |   200  |
-| -----------------------------------------------------------------------------------|
-|                   |         |                                             |        |
-| Obtener producto  |    GET  | http://localhost/web/tpe2/api/products/:ID  |   200  |
-| -----------------------------------------------------------------------------------|
-|                   |         |                                             |        |
-| Crear producto    |   POST  | http://localhost/web/tpe2/api/products/     |   201  |
-|-------------------|---------|---------------------------------------------|--------|
-|                   |         |                                             |        |
-|Actualizar producto|   PUT   | http://localhost/web/tpe2/api/products/:ID  |   200  |
-|------------------------------------------------------------------------------------|
-|                   |         |                                             |        |
-| Eliminar producto |  DELETE | http://localhost/web/tpe2/api/products/:ID  |   200  |
-| -----------------------------------------------------------------------------------|
 
+
+--------------------------------------------------------------------------------------         
+
+  Obtener productos      GET      http://localhost/web/tpe2/api/products/        200  
+
+--------------------------------------------------------------------------------------
+
+ Obtener producto       GET      http://localhost/web/tpe2/api/products/:ID      200  
+
+--------------------------------------------------------------------------------------
+
+ Crear producto         POST      http://localhost/web/tpe2/api/products/        201
+
+ ------------------------------------------------------------------------------------
+
+ Actualizar producto    PUT       http://localhost/web/tpe2/api/products/:ID     200
+
+-------------------------------------------------------------------------------------
+ 
+ Eliminar producto     DELETE      http://localhost/web/tpe2/api/products/:ID    200 
+
+-------------------------------------------------------------------------------------
+
+_____________________________________________________________________________________________________________________________________________________
 
 ## Endpoints
 Los endpoints en nuestra API permitirán acceder a los recursos para poder consultar, paginar, ordenar y filtrar datos de todos los productos registrados en la base
@@ -114,7 +123,7 @@ Los resultados pueden devolverse filtados por columna si se agregan parámetros 
 En el ejemplo busca en todos los campos que tienen el id de especificacion 13:
 
 http://localhost/web/tpe2/api/products/?column=id_especificacion&filtervalue=13
-
+-------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Errores
 A continuación se detallan errores específicos de la API y los mensajes de respuesta a los mismos.
 
