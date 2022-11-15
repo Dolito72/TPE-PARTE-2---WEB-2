@@ -46,21 +46,29 @@ Los endpoints en nuestra API permitirán acceder a los recursos para poder consu
 de datos db_motos de nuestra aplicación.
 
 http://localhost/web/tpe2/api/products/
+
 http://localhost/web/tpe2/api/products/:ID
 
 # Recursos
 
 ## GET Lista de productos
+
 http://localhost/web/tpe2/api/products/
+
 Recurso del endpoint products/ que retorna una lista de productos. 
 
 ## GET Producto
+
 http://localhost/web/tpe2/api/products/:ID
+
 Recurso del endpoint products/ que retorna un producto.
 
 ## POST Crear un producto
+
 http://localhost/web/tpe2/api/products/
+
 Esta petición permite crear un nuevo producto y guardarlo en la base de datos.
+
 Para enviarlo, usamos la salida en formato JSON, escribiéndolo en el body de la solicitud.
 ````
 Ejemplo:
@@ -74,10 +82,13 @@ BODY
 ````
 
 ## PUT Actualizar un producto
+
 http://localhost/web/tpe2/api/products/:ID
+
 Esta petición actualiza un producto que ya existe. Para ello vamos a necesitar el id del mismo.
 Luego, en formato JSON, escribimos los datos en el body.
 En el ejemplo a continuación, modificamos el precio del producto anterior que tiene el id 4.
+
 http://localhost/web/tpe2/api/products/4
 
 ```
@@ -91,10 +102,13 @@ BODY
 ````
 
 ## DELETE Eliminar un producto
+
 http://localhost/web/tpe2/api/products/:ID
+
 Esta petición elimina un producto. Para ello vamos a necesitar el id del mismo.
 En formato JSON, escribimos los datos en el body.
 En el ejemplo a continuación, eliminamos el producto con el id 4.
+
 http://localhost/web/tpe2/api/products/:4
 
 ````
@@ -108,18 +122,21 @@ BODY
 ````
 
 ## Parámetros por defecto
+
 En el caso de que se omitan algunos parámetros de consulta, las solicitudes GET devolverán los valores por defecto establecidos.
 Los mismos son página 1, límite 25, ordenados por id_especificación de forma ascendente.
 
 ## Paginación
 Se podrán paginar los resultados si se agregan los parámetros de consulta limit y page a las solicitudes GET:
 En el siguiente ejemplo, devuelve la página 1 con 5 productos:
+
 http://localhost/web/tpe2/api/products/?page=1&limit=5
 
 Nota: si omite el parámetro de pedido, la página predeterminada será 1 y el limite 25.
 
 ## Orden
 Los resultados pueden estar ordenados si se agregan a la consulta los parámetros orderBy (columna por la que se ordena) y order(asc o desc) a las solicitudes GET:
+
 http://localhost/web/tpe2/api/products/?sortBy=id_especificacion&order=desc
 
 Nota: si omite el parámetro de pedido, el orden predeterminado será por la columna id_especificacion y asc.
