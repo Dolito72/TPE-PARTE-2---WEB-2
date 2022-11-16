@@ -55,13 +55,13 @@ http://localhost/web/tpe2/api/products/:ID
 
 http://localhost/web/tpe2/api/products/
 
-Recurso del endpoint products/ que retorna una lista de productos. 
+Recurso que retorna una lista de productos. 
 
 ### GET Producto
 
 http://localhost/web/tpe2/api/products/:ID
 
-Recurso del endpoint products/ que retorna un producto.
+Recurso que retorna un producto.
 
 ### POST Crear un producto
 
