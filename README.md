@@ -1,13 +1,16 @@
 ## TPE-PARTE-2 WEB-2
-## API REST MOTOS ROYAL ENFIELD
+## API REST MOTOS ROYAL ENFIELD :motorcycle:
 
 ### Introducción
 Proyecto Trabajo Practico Especial - Parte 2,  creado para la materia Web 2 de la carrera Tecnicatura Universitaria en Desarrollo de Aplicaciones Informáticas (TUDAI)
 de  la Universidad Nacional del Centro de la Pcia. de Bs. As. (UNICEN).  
 El servicio lista productos (motos marca Royal Enfield) y permite consultar y buscar por filtros , paginar y ordenar por varios criterios.
 
-### Autenticacion
+### Autenticacion :lock:
 Aun no cuenta con autenticación.
+
+### Requerimientos :warning:
+Importar desde PHPMyAdmin (o cualquier otra) la base de datos database/db_motos.sql
 
 ### API Métodos
 Esta Api esta basada en principios RESTful y usa los métodos HTTP (GET) para acceder a los recursos, (POST y PUT) para agregar o modificar datos y (DELETE) para
@@ -150,7 +153,7 @@ En el ejemplo busca en todos los campos que tienen el id de especificacion 13:
 http://localhost/web/tpe2/api/products/?column=id_especificacion&filtervalue=13
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
-## Errores
+## Errores :warning:
 A continuación se detallan errores específicos de la API y los mensajes de respuesta a los mismos.
 
  ###  Status    |    Código error	       |                     Mensaje	  
