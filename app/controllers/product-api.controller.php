@@ -48,7 +48,7 @@ class ProductApiController
                 }
                 return $this->view->response($products, 200);
             } else
-                $this->view->response("No hay productos", 404);
+                $this->view->response("No hay productos", 204);
         } catch (Exception $e) {
             return $this->view->response("Se encontró algo inesperado que impide completar la petición", 500);
         }
@@ -115,7 +115,7 @@ class ProductApiController
             die;
         }
 
-    }
+        }
 
     public function getProduct($params = null)
     {
