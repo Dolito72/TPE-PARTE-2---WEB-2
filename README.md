@@ -9,7 +9,7 @@ El servicio lista productos (motos marca Royal Enfield) y permite consultar y bu
 ### Autenticacion :lock:
 Aun no cuenta con autenticación.
 
-### Requerimientos :warning:
+### Requerimientos :pushpin:
 Importar desde PHPMyAdmin (o cualquier otra) la base de datos database/db_motos.sql
 
 ### API Métodos
@@ -52,7 +52,7 @@ http://localhost/web/tpe2/api/products/
 
 http://localhost/web/tpe2/api/products/:ID
 
-## Recursos
+## Recursos :writing_hand:
 
 ### GET Lista de productos
 
