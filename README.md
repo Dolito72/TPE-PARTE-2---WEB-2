@@ -16,7 +16,7 @@ Importar desde PHPMyAdmin (o cualquier otra) la base de datos database/db_motos.
 Esta Api esta basada en principios RESTful y usa los métodos HTTP (GET) para acceder a los recursos, (POST y PUT) para agregar o modificar datos y (DELETE) para
 eliminar. El formato de transferencia soportado por el API para enviar y recibir respuestas es en JSON.
 
-
+````
   ### Request	      |     Método	   |             Endpoint	                      |       Status          
 
 
@@ -41,7 +41,7 @@ eliminar. El formato de transferencia soportado por el API para enviar y recibir
  Eliminar producto    |  DELETE      | http://localhost/web/tpe2/api/products/:ID       | 200 
 
 --------------------------------------------------------------------------------------------------
-
+````
 _____________________________________________________________________________________________________________________________________________________
 
 ### Endpoints
@@ -109,20 +109,12 @@ BODY
 http://localhost/web/tpe2/api/products/:ID
 
 Esta petición elimina un producto. Para ello vamos a necesitar el id del mismo.
-En formato JSON, escribimos los datos en el body.
+
 En el ejemplo a continuación, eliminamos el producto con el id 4.
 
-http://localhost/web/tpe2/api/products/:4
+http://localhost/web/tpe2/api/products/4
 
-````
-BODY
-   {
-        "precio": 1200,
-        "color": "Stellar red",
-        "stock": 4,
-        "id_especificacion": 3
-    }
-````
+
 
 ### Parámetros por defecto
 
