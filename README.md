@@ -17,7 +17,7 @@ Esta Api esta basada en principios RESTful y usa los métodos HTTP (GET) para ac
 eliminar. El formato de transferencia soportado por el API para enviar y recibir respuestas es en JSON.
 
 ````
-  ### Request	      |     Método	   |             Endpoint	                |       Status          
+  ### Request	      |     Método	   |             Endpoint	           |       Status          
 
 
 ----------------------------------------------------------------------------------------------------        
@@ -30,7 +30,7 @@ eliminar. El formato de transferencia soportado por el API para enviar y recibir
 
 ---------------------------------------------------------------------------------------------------
 
- Crear producto      |   POST        | http://localhost/web/tpe2/api/products/         |     201
+ Crear producto      |   POST        | http://localhost/web/tpe2/api/products/     |     201
 
  --------------------------------------------------------------------------------------------------
 
