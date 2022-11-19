@@ -117,6 +117,7 @@ class ProductApiController
 
     public function getProduct($params = null)
     {
+        try{
         // obtengo el id del arreglo de params
         $id = $params[':ID'];
         $product = $this->model->get($id);
@@ -125,10 +126,15 @@ class ProductApiController
             $this->view->response($product);
         else
             $this->view->response("El producto con el id $id no existe", 404);
+        }
+        catch (Exception $e) {
+            return $this->view->response("Se encontró algo inesperado que impide completar la petición", 500);
+        }
     }
 
     public function deleteProduct($params = null)
     {
+        try{
         $id = $params[':ID'];
         $product = $this->model->get($id);
         if ($product) {
@@ -136,8 +142,11 @@ class ProductApiController
             $this->view->response($product);
         } else
             $this->view->response("El producto con el id = $id no existe", 404);
+        }
+        catch (Exception $e) {
+            return $this->view->response("Se encontró algo inesperado que impide completar la petición", 500);
+        }
     }
-
     public function insertProduct($params = null)
     {
         //obtengo el body del request (json)
