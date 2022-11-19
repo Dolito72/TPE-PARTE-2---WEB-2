@@ -79,18 +79,21 @@ class ProductApiController
             $okParameters++;
         }
 
-      
+        if (count($_GET) > $okParameters) {
+            $this->view->response("Uno o más parámetros son incorrectos", 400);
+            die;
+        }
 
         if ($column != null && !in_array(strtolower($column), $columns)) {
             $this->view->response("Ingresó de forma incorrecta el nombre de la columna", 400);
             die;
         }
-      
-        if ($column != null && $filtervalue == null || is_numeric($filtervalue)) {
+
+        if ($column != null && ($filtervalue == null || !is_numeric($filtervalue))) {
             $this->view->response("Ingresó de forma incorrecta el valor de la columna", 400);
             die;
         }
-        
+
         if ($orderBy != null && !in_array(strtolower($orderBy), $columns)) {
             $this->view->response("Ingresó de forma incorrecta el parámetro para ordenar", 400);
             die;
@@ -110,12 +113,7 @@ class ProductApiController
             $this->view->response("Ingresó de forma incorrecta el límite", 400);
             die;
         }
-        if (count($_GET) > $okParameters){
-            $this->view->response("Uno o más parámetros son incorrectos", 400);
-            die;
-        }
-
-        }
+    }
 
     public function getProduct($params = null)
     {
@@ -144,8 +142,11 @@ class ProductApiController
     {
         //obtengo el body del request (json)
         $product = $this->getData();
+        $especificacion = [1, 2, 3, 5, 6, 13];
         if (empty($product->precio) || empty($product->color) || empty($product->stock) || empty($product->id_especificacion)) {
             $this->view->response("Complete los datos", 400);
+        } elseif (!in_array($product->id_especificacion, $especificacion)) {
+            $this->view->response("El id_especificación del producto ingresado es inexistente, ingrese 1, 2, 3, 5, 6 o 13", 404);
         } else {
             $id = $this->model->insert($product->precio, $product->color, $product->stock, $product->id_especificacion);
             if ($id != 0) {
@@ -159,17 +160,24 @@ class ProductApiController
 
     public function updateProduct($params = null)
     {
-        $id = $params[':ID'];
-        $body = $this->getData();
-        if (empty($body->precio) || empty($body->color) || empty($body->stock) || empty($body->id_especificacion)) {
-            $this->view->response("Complete los datos", 400);
-        } else {
-            $product = $this->model->get($id);
-            if ($product) {
-                $this->model->update($id, $body->precio, $body->color, $body->stock, $body->id_especificacion);
-                $this->view->response("El producto se modificó con éxito", 200);
-            } else
-                $this->view->response("El producto con el id $id no existe", 404);
+        try {
+            $id = $params[':ID'];
+            $body = $this->getData();
+            $especificacion = [1, 2, 3, 5, 6, 13];
+            if (empty($body->precio) || empty($body->color) || empty($body->stock) || empty($body->id_especificacion)) {
+                $this->view->response("Complete los datos", 400);
+            } elseif (!in_array($body->id_especificacion, $especificacion)) {
+                $this->view->response("El id especificación del producto ingresado es inexistente, ingrese 1, 2, 3, 5, 6 o 13", 404);
+            } else {
+                $product = $this->model->get($id);
+                if ($product) {
+                    $this->model->update($id, $body->precio, $body->color, $body->stock, $body->id_especificacion);
+                    $this->view->response("El producto se modificó con éxito", 200);
+                } else
+                    $this->view->response("El producto con el id $id no existe", 404);
+            }
+        } catch (Exception $e) {
+            return $this->view->response("Se encontró algo inesperado que impide completar la petición", 500);
         }
     }
 }
